@@ -6,17 +6,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.rabbitmq.Employee;
-import com.rabbitmq.config.ProducerComplex;
-import com.rabbitmq.config.ProducerPremitive;
+import com.rabbitmq.config.ProducerComplexConfig;
+import com.rabbitmq.config.ProducerPremitiveConfig;
 
 @RestController
 public class ProducerController {
 
 	@Autowired
-	ProducerPremitive producerPremitive;
+	ProducerPremitiveConfig producerPremitive;
 
 	@Autowired
-	ProducerComplex producerComplex;
+	ProducerComplexConfig producerComplex;
 
 	@GetMapping(value = "/sendMsg")
 	public String pushNormalMessage(@RequestParam("msg") String msg) {
